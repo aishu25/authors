@@ -1,0 +1,16 @@
+<div class="wapper">
+  <h1>Edit a Author</h1>
+  <a [routerLink]="['']">Home</a>
+    <div>
+      <form>
+        <label>Author Name :<br>
+          <input type="text" [(ngModel)]= "author.author_name" *ngIf="author" name="author_name">
+        </label>
+        <input type="submit" value="Edit the author"(click)="updateAuthorInfoThroughService()">
+        <button [routerLink] = "['/home']" >Cancel</button>
+      </form>
+    </div>
+  <div *ngIf="errors" id="error_message">
+    <p>{{ errors.errors.author_name.message }}</p>
+  </div>
+</div>

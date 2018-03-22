@@ -1,0 +1,13 @@
+<div class="wapper">	
+	<h1>Add a new Author</h1>
+	<a [routerLink]="['']">Home</a>
+	<form>
+		<label>Author Name:
+			<input type="text" name="author.author_name" [(ngModel)]="author.author_name">
+		</label>
+		<input type="submit" value="Submit" (click)="addAuthorThroughService()">
+	</form>
+	<div *ngIf="errors" id="error_message">
+    	<p>{{ errors.author_name.message }}</p>
+  	</div>
+</div>
